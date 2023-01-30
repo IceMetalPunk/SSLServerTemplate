@@ -9,6 +9,7 @@ import LetsEncrypt from '@andrewiski/letsencrypt'
 import * as url from 'url';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
+const useLetsEncryptStagingUrl = false;
 export default async (opts, HTTP_CALLBACK, HTTPS_CALLBACK, FINAL_CALLBACK) => {
     const {HTTP_PORT, HTTPS_PORT, WEB_DOMAIN, DNS_EMAIL} = opts;
     let {CERTS_DIR} = opts;
@@ -30,7 +31,7 @@ export default async (opts, HTTP_CALLBACK, HTTPS_CALLBACK, FINAL_CALLBACK) => {
 
     const letsEncryptOptions = {
         CERTS_DIR,
-        useLetsEncryptStagingUrl: false
+        useLetsEncryptStagingUrl
     }
 
     const letsEncrypt = new LetsEncrypt(letsEncryptOptions);
@@ -103,7 +104,7 @@ export default async (opts, HTTP_CALLBACK, HTTPS_CALLBACK, FINAL_CALLBACK) => {
                 certificateSubscriberEmail: certificateSubscriberEmail,
                 autoRenew: true,
                 https_server: https_server,
-                useLetsEncryptStagingUrl : false,
+                useLetsEncryptStagingUrl,
                 skipDryRun: true,
                 skipChallengeTest: true
             }
