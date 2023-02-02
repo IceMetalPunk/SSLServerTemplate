@@ -1,5 +1,7 @@
 import {config} from 'dotenv'
 config();
+import helmet from 'helmet'
+import express from 'express'
 import startSecureServer from './sslHelper.js'
 
 const HTTP_PORT = process.env.HTTP_PORT || '80';
@@ -16,7 +18,9 @@ const { server } = await startSecureServer(
     () => console.log('Certs checked, all servers up and running!')
 );
 
+server.use(helmet());
+server.use(express.static('./public', {extensions: ['html']}));
 server.get('/', (req, res) => {
-    res.send('Future site of the website of Godform: Divine Battlefield, a digital CCG of cosmic proportions.');
+    res.send('How did you get here?');
 });
 server.all('*', (req, res) => res.redirect('/'));

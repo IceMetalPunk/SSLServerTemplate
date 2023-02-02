@@ -79,7 +79,7 @@ export default async (opts, HTTP_CALLBACK, HTTPS_CALLBACK, FINAL_CALLBACK) => {
                 } else {
                     const err = 'HTTPS missing key and certs; server not started!';
                     console.error(err);
-                    rej(err);
+                    res(err);
                 }
             } catch (ex) {
                 const err = `HTTPS failed to start server on port ${HTTPS_PORT}!`;
