@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    padding-bottom: 1rem;
+}
+header {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+header img {
+    width: 100%;
+}
+nav {
+    text-align: center;
+}
+nav > ul {
+    list-style: none;
+    border-bottom: 1px solid #000000;
+    padding: 0.25rem;
+}
+nav > ul > li {
+    display: inline-block;
+}
+nav > ul > li > a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #5c5c00;
+}
+nav > ul > li > a:hover {
+    text-decoration: underline;
+}
+nav > ul > li > a:active {
+    color: #6d6d00;
+    text-decoration: underline;
+}
+nav > ul > li > a:visited {
+    color: #4b4b00;
+}
+nav > ul > li:not(:last-child):after {
+    content: "|";
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+main {
+    text-align: center;
+    padding-top: 0.25rem;
+}
