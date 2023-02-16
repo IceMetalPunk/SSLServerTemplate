@@ -48,7 +48,7 @@ if (!apiError) {
         /* If model seems SFW, double-check against the Civit.ai database.
             
             NOTE: This is not foolproof! Models that are not on Civit.ai (including custom merges) and
-            models that are too old to have calculates hashes to look up will NOT be caught by this!
+            models that are too old to have calculated hashes to look up will NOT be caught by this!
 
             Manual oversight is recommended/required when models are added to verify the correct NSFW tags! */
         if (!isNSFW && (entry.sha256 || entry.hash)) {
