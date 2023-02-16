@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "forever": "nodemon node ./index.js"
+    "forever": "nodemon --ignore modelMap.json node ./index.js"
   },
   "keywords": [],
   "author": "IceMetalPunk",
